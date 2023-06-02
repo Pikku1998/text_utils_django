@@ -3,11 +3,11 @@ from django.http import HttpResponse
 
 # Create your views here.
 def  homepage(request):
-    return render(request,"homepage.html")
+    return render(request,"homepage_btsrp.html")
 
 def analyzed_text(request):
     input_text = request.GET.get('input_text', 'No text entered.')
-    capitalize = request.GET.get('Capitalize','')
+    capitalize = request.GET.get('capitalize','')
     remove_punctuation = request.GET.get('remove_punctuation','') 
     remove_space = request.GET.get('remove_space','') 
     analyzed_text = input_text
