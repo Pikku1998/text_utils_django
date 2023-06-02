@@ -6,10 +6,10 @@ def  homepage(request):
     return render(request,"homepage_btsrp.html")
 
 def analyzed_text(request):
-    input_text = request.GET.get('input_text', 'No text entered.')
-    capitalize = request.GET.get('capitalize','')
-    remove_punctuation = request.GET.get('remove_punctuation','') 
-    remove_space = request.GET.get('remove_space','') 
+    input_text = request.POST.get('input_text', 'No text entered.')
+    capitalize = request.POST.get('capitalize','')
+    remove_punctuation = request.POST.get('remove_punctuation','') 
+    remove_space = request.POST.get('remove_space','') 
     analyzed_text = input_text
     
     if input_text == '':
@@ -34,4 +34,4 @@ def analyzed_text(request):
     context = {
         'analyzed_text': analyzed_text
     }
-    return render(request,"analyzed_text.html",context)
+    return render(request,"analyzed_text_btsrp.html",context)
